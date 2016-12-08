@@ -16,7 +16,7 @@ class User < ApplicationRecord
     participated_groups.delete(group)
   end
 
-  has_many :groups
+  has_many :groups, :dependent => :destroy
   has_many :posts
 
   has_many :group_relationships
